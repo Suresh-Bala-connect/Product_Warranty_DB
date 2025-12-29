@@ -1,0 +1,312 @@
+.addContainer {
+    margin-left: 320px;
+    min-height: 100vh;
+    background: #f8f9fa;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.addBox {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.addBox h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #667eea;
+}
+
+.addBox form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addBox label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.addBox input,
+.addBox select,
+.addBox textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+    box-sizing: border-box;
+}
+
+.addBox input:focus,
+.addBox select:focus,
+.addBox textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.addBox input::placeholder,
+.addBox textarea::placeholder {
+    color: #adb5bd;
+}
+
+.addBox select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23555' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+}
+
+.addBox textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.inputBox,
+.catagory,
+.inputBrand,
+.inputModelNumber,
+.inputSerialNumber,
+.inputPurchaseDate,
+.inputWarrantyMonths,
+.inputWarrantyEndDate,
+.inputBillImage,
+.inputShopName,
+.inputImportantNotes {
+    margin-bottom: 5px;
+}
+
+.inputBillImage input[type="file"] {
+    padding: 10px 15px;
+    border: 2px dashed #dee2e6;
+    background: #f8f9fa;
+    cursor: pointer;
+}
+
+.inputBillImage input[type="file"]:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+/* Button Container - Row Layout */
+.buttonContainer {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.submitButton,
+.cancelButton {
+    flex: 1;
+}
+
+.submitButton button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submitButton button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.cancelButton button {
+    width: 100%;
+    padding: 15px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancelButton button:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(108, 117, 125, 0.3);
+}
+
+/* Form grid layout for better organization */
+@media (min-width: 768px) {
+    .addBox form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .addBox h2,
+    .inputImportantNotes,
+    .buttonContainer {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .addContainer {
+        margin-left: 0;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .addContainer {
+        padding: 20px;
+    }
+    
+    .addBox {
+        padding: 30px;
+    }
+    
+    .addBox h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .addContainer {
+        padding: 15px;
+    }
+    
+    .addBox {
+        padding: 25px;
+    }
+    
+    .addBox h2 {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+    
+    .addBox form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .addBox input,
+    .addBox select,
+    .addBox textarea {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .buttonContainer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .submitButton button,
+    .cancelButton button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .addContainer {
+        padding: 10px;
+    }
+    
+    .addBox {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .addBox h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .addBox label {
+        font-size: 13px;
+    }
+    
+    .addBox input,
+    .addBox select,
+    .addBox textarea {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .buttonContainer {
+        gap: 8px;
+    }
+}
+
+/* Animation for form elements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.addBox form > * {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.addBox form > *:nth-child(1) { animation-delay: 0.1s; }
+.addBox form > *:nth-child(2) { animation-delay: 0.2s; }
+.addBox form > *:nth-child(3) { animation-delay: 0.3s; }
+.addBox form > *:nth-child(4) { animation-delay: 0.4s; }
+.addBox form > *:nth-child(5) { animation-delay: 0.5s; }
+.addBox form > *:nth-child(6) { animation-delay: 0.6s; }
+.addBox form > *:nth-child(7) { animation-delay: 0.7s; }
+.addBox form > *:nth-child(8) { animation-delay: 0.8s; }
+.addBox form > *:nth-child(9) { animation-delay: 0.9s; }
+.addBox form > *:nth-child(10) { animation-delay: 1.0s; }
+.addBox form > *:nth-child(11) { animation-delay: 1.1s; }
+.addBox form > *:nth-child(12) { animation-delay: 1.2s; }
+.addBox form > *:nth-child(13) { animation-delay: 1.3s; }
+.addBox form > *:nth-child(14) { animation-delay: 1.4s; }
+
+/* Custom styling for file input */
+.inputBillImage input[type="file"]::-webkit-file-upload-button {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.inputBillImage input[type="file"]::-webkit-file-upload-button:hover {
+    background: #5a6fd8;
+}

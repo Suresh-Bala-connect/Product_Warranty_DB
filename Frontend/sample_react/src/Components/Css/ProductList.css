@@ -1,0 +1,1226 @@
+.productListContainer {
+    margin-left: 280px;
+    min-height: 100vh;
+    background: #f8f9fa;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.productListBox {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.productListHeader {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+}
+
+.productListHeader h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.productListSearch {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productListSearch label {
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.productListSearch input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+    box-sizing: border-box;
+}
+
+.productListSearch input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.productListSearch input::placeholder {
+    color: #adb5bd;
+}
+
+.productListTable {
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.productListTable table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.productListTable thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.productListTable th {
+    padding: 18px 15px;
+    text-align: left;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.productListTable tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.productListTable tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.productListTable tbody tr:last-child {
+    border-bottom: none;
+}
+
+.productListTable td {
+    padding: 16px 15px;
+    color: #495057;
+    font-size: 14px;
+    border: none;
+    line-height: 1.5;
+}
+
+.productListTable tbody tr:nth-child(even) {
+    background-color: #fdfdfe;
+}
+
+.productListTable tbody tr:nth-child(even):hover {
+    background-color: #f1f3f4;
+}
+
+/* Column specific styling */
+.productListTable td:first-child {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.productListTable td:nth-child(2),
+.productListTable td:nth-child(3) {
+    color: #6c757d;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.productListTable td:last-child {
+    color: #495057;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .productListContainer {
+        margin-left: 0;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .productListContainer {
+        padding: 20px;
+    }
+
+    .productListBox {
+        padding: 25px;
+    }
+
+    .productListHeader h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .productListContainer {
+        padding: 15px;
+    }
+
+    .productListBox {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .productListHeader {
+        margin-bottom: 20px;
+    }
+
+    .productListHeader h2 {
+        font-size: 22px;
+    }
+
+    .productListSearch {
+        margin-bottom: 20px;
+    }
+
+    .productListSearch input {
+        max-width: 100%;
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .productListTable {
+        overflow-x: auto;
+        border-radius: 8px;
+    }
+
+    .productListTable table {
+        min-width: 600px;
+    }
+
+    .productListTable th,
+    .productListTable td {
+        padding: 14px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productListContainer {
+        padding: 10px;
+    }
+
+    .productListBox {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .productListHeader h2 {
+        font-size: 20px;
+    }
+
+    .productListHeader {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+
+    .productListSearch label {
+        font-size: 13px;
+    }
+
+    .productListSearch input {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .productListTable th,
+    .productListTable td {
+        padding: 12px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Animation for table rows */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.productListTable tbody tr {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.productListTable tbody tr:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.productListTable tbody tr:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.productListTable tbody tr:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.productListTable tbody tr:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.productListTable tbody tr:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Empty state styling */
+.productListTable tbody:empty::after {
+    content: "No products found";
+    display: block;
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Loading state */
+.productListTable.loading tbody tr {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Delete Button Styling */
+.productListTable button {
+    background: linear-gradient(135deg, #c09590 0%, #54150e 100%);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    /* text-transform: uppercase; */
+    /* box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2); */
+    /* min-width: 80px; */
+    margin-top: 10px;
+}
+
+.productListTable button:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(231, 76, 60, 0.3);
+}
+
+.productListTable button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(231, 76, 60, 0.2);
+}
+
+.productListTable button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+}
+
+/* Make sure the button is properly positioned in the table cell */
+.productListTable td:last-child {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Responsive adjustments for the button */
+@media (max-width: 768px) {
+    .productListTable button {
+        padding: 8px 16px;
+        font-size: 12px;
+        min-width: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productListTable button {
+        padding: 6px 12px;
+        font-size: 11px;
+        min-width: 60px;
+        letter-spacing: normal;
+    }
+}
+
+
+/* Modal background */
+.productData .modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal box */
+.productData .modelBox {
+    background: white;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 12px;
+    padding: 0;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.productData .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.productData .Header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.productData .closeBtn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.productData .closeBtn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Table container */
+.productData .productTable {
+    width: 100%;
+    border-collapse: collapse;
+    display: block;
+    overflow-y: auto;
+    max-height: calc(90vh - 180px);
+    flex: 1;
+}
+
+/* Hide table header */
+.productData .productTable thead {
+    display: none;
+}
+
+/* Make row as container for grid */
+.productData .productTable tbody tr {
+    display: block;
+    padding: 0;
+}
+
+/* Create grid layout for cells - 2 per row */
+.productData .productTable tbody td {
+    display: inline-block;
+    width: 50%;
+    padding: 18px 25px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #333;
+    vertical-align: top;
+    min-height: 80px;
+    position: relative;
+}
+
+/* Remove right border for every 2nd item */
+.productData .productTable tbody td:nth-child(even) {
+    border-right: none;
+}
+
+/* Add labels using nth-child */
+.productData .productTable tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 0;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Define labels for each column */
+.productData .productTable tbody td:nth-child(1)::before {
+    content: "Product Name";
+}
+
+.productData .productTable tbody td:nth-child(2)::before {
+    content: "Category";
+}
+
+.productData .productTable tbody td:nth-child(3)::before {
+    content: "Type of Product";
+}
+
+.productData .productTable tbody td:nth-child(4)::before {
+    content: "Brand Name";
+}
+
+.productData .productTable tbody td:nth-child(5)::before {
+    content: "Model Number";
+}
+
+.productData .productTable tbody td:nth-child(6)::before {
+    content: "Serial Number";
+}
+
+.productData .productTable tbody td:nth-child(7)::before {
+    content: "Purchase Date";
+}
+
+.productData .productTable tbody td:nth-child(8)::before {
+    content: "Warranty Months";
+}
+
+.productData .productTable tbody td:nth-child(9)::before {
+    content: "Warranty End Date";
+}
+
+.productData .productTable tbody td:nth-child(10)::before {
+    content: "Bill Image";
+}
+
+.productData .productTable tbody td:nth-child(11)::before {
+    content: "Shop Name";
+}
+
+.productData .productTable tbody td:nth-child(12)::before {
+    content: "Important Notes";
+}
+
+/* Special styling for important fields */
+.productData .productTable tbody td:nth-child(9)::before {
+    color: #e74c3c;
+    border-bottom-color: #e74c3c;
+}
+
+.productData .productTable tbody td:nth-child(12)::before {
+    color: #9b59b6;
+    border-bottom-color: #9b59b6;
+}
+
+/* Highlight important data */
+.productData .productTable tbody td:nth-child(9) {
+    color: #e74c3c;
+    font-weight: 600;
+    background-color: #fff5f5;
+}
+
+.productData .productTable tbody td:nth-child(12) {
+    color: #8e44ad;
+    font-weight: 500;
+    background-color: #f9f0ff;
+    font-style: italic;
+}
+
+/* Striped rows effect */
+.productData .productTable tbody td:nth-child(4n+1),
+.productData .productTable tbody td:nth-child(4n+2) {
+    background-color: #f8f9fa;
+}
+
+.productData .productTable tbody td:nth-child(4n+3),
+.productData .productTable tbody td:nth-child(4n+4) {
+    background-color: #ffffff;
+}
+
+/* For empty state */
+.productData .productTable tbody td[colspan] {
+    width: 100%;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 16px;
+    color: #7f8c8d;
+    font-style: italic;
+    border: none;
+}
+
+.productData .productTable tbody td[colspan]::before {
+    display: none;
+}
+
+/* Edit Button Styling - Centered at bottom */
+.productData .editButton {
+    width: 100%;
+    padding: 25px 30px;
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(to top, white 90%, rgba(255, 255, 255, 0.9));
+    margin-top: auto;
+}
+
+.productData .editButton button {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+    border: none;
+    padding: 9px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.productData .editButton button:hover {
+    background: linear-gradient(135deg, #45a049 0%, #1b5e20 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.productData .editButton button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(76, 175, 80, 0.2);
+}
+
+/* Add icon to button */
+.productData .editButton button::before {
+    content: "✏️";
+    font-size: 16px;
+}
+
+/* Table scrollbar styling */
+.productData .productTable::-webkit-scrollbar {
+    width: 8px;
+}
+
+.productData .productTable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.productData .productTable::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.productData .productTable::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Mobile view - 1 per line */
+@media (max-width: 768px) {
+    .productData .modelBox {
+        width: 95%;
+        max-height: 95vh;
+        margin: 10px;
+    }
+
+    .productData .Header {
+        padding: 15px 20px;
+    }
+
+    .productData .Header h2 {
+        font-size: 20px;
+    }
+
+    .productData .productTable tbody td {
+        width: 100%;
+        border-right: none;
+        padding: 15px 20px;
+    }
+
+    .productData .productTable tbody td:nth-child(even) {
+        border-right: none;
+    }
+
+    /* Remove striped effect on mobile */
+    .productData .productTable tbody td {
+        background-color: white !important;
+    }
+
+    /* Adjust table height for mobile */
+    .productData .productTable {
+        max-height: calc(95vh - 180px);
+    }
+
+    /* Edit button mobile styling */
+    .productData .editButton {
+        padding: 20px;
+    }
+
+    .productData .editButton button {
+        width: 100%;
+        max-width: 300px;
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Tablet view - adjust padding */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .productData .productTable tbody td {
+        padding: 16px 20px;
+    }
+
+    .productData .editButton {
+        padding: 20px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+    .productData .editButton button {
+        padding: 15px 50px;
+        font-size: 17px;
+    }
+}
+
+/* Animation for button */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    100% {
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+    }
+}
+
+.productData .editButton button {
+    animation: pulse 2s infinite;
+}
+
+/* Remove animation on hover */
+.productData .editButton button:hover {
+    animation: none;
+}
+/* .editdata {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+} */
+
+/* ===== Full Screen Modal Overlay ===== */
+.modalContainer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ===== Modal Box ===== */
+.modelBox {
+    width: 94%;
+    max-width: 800px;
+    max-height: 92vh;
+    background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: modalSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ===== Header ===== */
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg) scale(1.1);
+    color: #ff6b6b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.closeBtn:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* ===== Modal Body ===== */
+.productData {
+    padding: 30px;
+    overflow-y: auto;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: #667eea #f1f1f1;
+}
+
+.productData::-webkit-scrollbar {
+    width: 8px;
+}
+
+.productData::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 4px;
+}
+
+.productData::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+.productData::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+/* ===== Form Layout ===== */
+.dataDetail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px 25px;
+    align-items: start;
+}
+
+/* Labels */
+.dataDetail label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    padding: 12px 16px;
+    background: #f7fafc;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    min-height: 48px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dataDetail label:hover {
+    background: #edf2f7;
+    transform: translateX(-2px);
+    border-left-color: #764ba2;
+}
+
+/* Inputs */
+.dataDetail input {
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 2px solid #e2e8f0;
+    outline: none;
+    transition: all 0.3s ease;
+    background: white;
+    color: #2d3748;
+    font-family: inherit;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dataDetail input:hover {
+    border-color: #cbd5e0;
+    background: #fafafa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.dataDetail input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15), 
+                0 4px 12px rgba(102, 126, 234, 0.1);
+    background: white;
+    transform: translateY(-1px);
+}
+
+.dataDetail input::placeholder {
+    color: #a0aec0;
+    font-style: italic;
+}
+
+/* Special input styling for date and file */
+.dataDetail input[type="text"][value*="Date"],
+.dataDetail input[type="text"][value*="date"] {
+    background: #fffaf0;
+    border-color: #ed8936;
+}
+
+.dataDetail input[type="text"][value*="billImage"] {
+    background: #f0fff4;
+    border-style: dashed;
+    border-color: #48bb78;
+    color: #276749;
+}
+
+/* ===== Button Section ===== */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 2px solid #e2e8f0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), #ffffff);
+    position: sticky;
+    bottom: 0;
+}
+
+.update button,
+.cancel button {
+    min-width: 160px;
+    padding: 14px 28px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.update button::before,
+.cancel button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.update button:hover::before,
+.cancel button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Update Button */
+.update button {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+}
+
+.update button:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(16, 185, 129, 0.4);
+}
+
+.update button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* Cancel Button */
+.cancel button {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
+}
+
+.cancel button:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(239, 68, 68, 0.4);
+}
+
+.cancel button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Button focus states */
+.update button:focus,
+.cancel button:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 3px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Form element animations */
+.dataDetail label,
+.dataDetail input {
+    animation: slideUp 0.4s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.dataDetail label {
+    animation-delay: calc(var(--index, 0) * 0.05s);
+}
+
+.dataDetail input {
+    animation-delay: calc(var(--index, 0) * 0.05s + 0.1s);
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+    .modelBox {
+        width: 96%;
+        max-height: 96vh;
+        border-radius: 16px;
+        margin: 10px;
+    }
+    
+    .Header {
+        padding: 18px 20px;
+    }
+    
+    .Header h2 {
+        font-size: 20px;
+    }
+    
+    .closeBtn {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .productData {
+        padding: 20px;
+    }
+    
+    .dataDetail {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .dataDetail label {
+        text-align: left;
+        justify-content: flex-start;
+        border-left: none;
+        border-bottom: 3px solid #667eea;
+        padding: 10px 14px;
+        min-height: 40px;
+    }
+    
+    .dataDetail input {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .buttonContainer {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 25px;
+        padding-top: 20px;
+        position: relative;
+    }
+    
+    .update button,
+    .cancel button {
+        min-width: 100%;
+        padding: 12px 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modelBox {
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    .Header {
+        padding: 16px;
+    }
+    
+    .Header h2 {
+        font-size: 18px;
+    }
+    
+    .productData {
+        padding: 16px;
+    }
+    
+    .dataDetail label {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    
+    .dataDetail input {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+/* Loading state for buttons */
+.update button.loading,
+.cancel button.loading {
+    color: transparent;
+    position: relative;
+}
+
+.update button.loading::after,
+.cancel button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Success/Error states */
+.update button.success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    animation: pulseSuccess 2s ease;
+}
+
+.cancel button.error {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    animation: pulseError 2s ease;
+}
+
+@keyframes pulseSuccess {
+    0%, 100% { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3); }
+    50% { box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6); }
+}
+
+@keyframes pulseError {
+    0%, 100% { box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3); }
+    50% { box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6); }
+}

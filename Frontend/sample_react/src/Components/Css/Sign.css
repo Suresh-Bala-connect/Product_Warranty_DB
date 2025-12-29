@@ -1,0 +1,480 @@
+/* Sign.css - Modern Glass Morphism Design */
+
+.singContainer {
+  display: flex;
+  width: 900px;
+  height: 600px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 20px 40px rgba(138, 43, 226, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Background floating elements */
+.singContainer::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(45deg, #8A2BE2, #4B0082);
+  border-radius: 50%;
+  top: -150px;
+  right: -100px;
+  opacity: 0.1;
+  animation: float 8s ease-in-out infinite;
+}
+
+.singContainer::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #4B0082, #8A2BE2);
+  border-radius: 50%;
+  bottom: -100px;
+  left: -50px;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+
+  66% {
+    transform: translateY(10px) rotate(240deg);
+  }
+}
+
+.signBox {
+  flex: 1.2;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideInLeft 0.8s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.err {
+  color: red;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 15px;
+}
+
+.signBox h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+.signBox h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #8A2BE2, #4B0082);
+  border-radius: 2px;
+  animation: widthGrow 1s ease-out 0.5s both;
+}
+
+@keyframes widthGrow {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 60px;
+  }
+}
+
+.formInput {
+  margin-bottom: 30px;
+}
+
+.userName,
+.userEmail,
+.userPassword,
+.repeatPassword {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.userName svg,
+.userEmail svg,
+.userPassword svg,
+.repeatPassword svg {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8A2BE2;
+  width: 22px;
+  height: 22px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.userName input,
+.userEmail input,
+.userPassword input,
+.repeatPassword input {
+  width: 100%;
+  padding: 16px 20px 16px 60px;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background: rgba(138, 43, 226, 0.05);
+  backdrop-filter: blur(10px);
+  color: #333;
+  font-weight: 500;
+}
+
+.userName input:focus,
+.userEmail input:focus,
+.userPassword input:focus,
+.repeatPassword input:focus {
+  outline: none;
+  border-color: #8A2BE2;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow:
+    0 5px 20px rgba(138, 43, 226, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.userName input:focus+svg,
+.userEmail input:focus+svg,
+.userPassword input:focus+svg,
+.repeatPassword input:focus+svg {
+  color: #4B0082;
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Staggered animations */
+.userName {
+  animation: slideUp 0.6s ease-out 0.2s both;
+}
+
+.userEmail {
+  animation: slideUp 0.6s ease-out 0.3s both;
+}
+
+.userPassword {
+  animation: slideUp 0.6s ease-out 0.4s both;
+}
+
+.repeatPassword {
+  animation: slideUp 0.6s ease-out 0.5s both;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signBtn {
+  margin-top: 10px;
+  animation: slideUp 0.6s ease-out 0.6s both;
+}
+
+.signBtn button {
+  width: 100%;
+  padding: 16px 0;
+  background: linear-gradient(135deg, #8A2BE2, #4B0082);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+}
+
+.signBtn button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.8s ease;
+}
+
+.signBtn button:hover::before {
+  left: 100%;
+}
+
+.signBtn button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 15px 30px rgba(138, 43, 226, 0.4),
+    0 5px 15px rgba(138, 43, 226, 0.2);
+}
+
+.signBtn button:active {
+  transform: translateY(-1px);
+}
+
+.textBox {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(121, 82, 157, 0.9), rgba(75, 0, 130, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  color: white;
+  text-align: center;
+  animation: slideInRight 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.createAccount {
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.createAccount p {
+  font-size: 14px;
+  color: #d1adad;
+  margin: 0;
+}
+
+.createAccount a {
+  color: #8A2BE2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.createAccount a:hover {
+  color: #4B0082;
+  text-shadow: 0 0 8px rgba(138, 43, 226, 0.3);
+}
+
+.createAccount a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #8A2BE2;
+  transition: width 0.3s ease;
+}
+
+.createAccount a:hover::after {
+  width: 100%;
+}
+
+.textBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.textHead h2 {
+  font-size: 38px;
+  margin-bottom: 25px;
+  animation: bounceIn 1s ease-out 0.3s both;
+  position: relative;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.textPara {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+  margin-bottom: 30px;
+}
+
+.textPara img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  animation: floatImage 4s ease-in-out infinite;
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes floatImage {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+
+  66% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+}
+
+.textPara p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 280px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.already {
+  animation: fadeInUp 0.6s ease-out 0.7s both;
+}
+
+.already p {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.already a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.already a:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive design */
+@media (max-width: 920px) {
+  .singContainer {
+    width: 95%;
+    height: auto;
+    margin: 30px auto;
+  }
+
+  .signBox,
+  .textBox {
+    padding: 40px 30px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(138, 43, 226, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8A2BE2, #4B0082);
+  border-radius: 4px;
+}

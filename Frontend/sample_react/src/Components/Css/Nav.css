@@ -1,0 +1,172 @@
+.navBar {
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nabBox {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 25px 20px;
+    position: relative;
+}
+
+.navHead {
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.navHead h2 {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navRight {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.navRight button {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    color: white;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+}
+
+.navRight button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logOut {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logOut button {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(220, 53, 69, 0.8);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+.logOut button:hover {
+    background: rgba(220, 53, 69, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
+}
+
+/* Active state for buttons */
+.navRight button:active,
+.logOut button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .navBar {
+        width: 280px;
+    }
+    
+    .nabBox {
+        padding: 20px 15px;
+    }
+    
+    .navHead h2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navBar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .nabBox {
+        height: auto;
+        padding: 15px;
+    }
+    
+    .navRight {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        gap: 8px;
+    }
+    
+    .navRight button {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        padding: 12px 15px;
+    }
+    
+    .navRight button:hover {
+        transform: translateY(-2px);
+    }
+    
+    .logOut {
+        margin-top: 20px;
+        position: static;
+    }
+    
+    .navHead {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navBar {
+        width: 100%;
+    }
+    
+    .nabBox {
+        padding: 12px;
+    }
+    
+    .navRight {
+        flex-direction: column;
+    }
+    
+    .navRight button {
+        min-width: auto;
+    }
+    
+    .navHead h2 {
+        font-size: 15px;
+    }
+}
