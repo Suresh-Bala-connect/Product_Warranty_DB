@@ -47,7 +47,7 @@ function AddProduct() {
         console.log("Bill Image File:", formData.get("billImage"));
 
         try {
-            const result = axios.post("http://localhost:5022/addproduct", formData, {
+            const result = axios.post("https://product-warranty-db-backend.onrender.com/addproduct", formData, {
                 headers: {
                     "Context-Types": "multipart/form-data"
                 }

@@ -32,7 +32,7 @@ function ProductList() {
 
     const resultProduct = async () => {
         try {
-            const result = await axios.get(`http://localhost:5022/product/${userId}`);
+            const result = await axios.get(`https://product-warranty-db-backend.onrender.com/product/${userId}`);
             setProduct(result.data.data);
             setFilterProduct(result.data.data);
             localStorage.setItem("product",result.data.data);
@@ -59,7 +59,7 @@ function ProductList() {
         // alert("Delete Data")
         const deleteProduct = async () => {
             try {
-                const delResult = await axios.delete(`http://localhost:5022/delete/${id}`)
+                const delResult = await axios.delete(`https://product-warranty-db-backend.onrender.com/delete/${id}`)
                 console.log(delResult)
                 if (delResult.data.success) {
                     resultProduct();
@@ -97,7 +97,7 @@ function ProductList() {
         console.log("Update Product", editProduct);
         try {
             const res = await axios.put(
-                `http://localhost:5022/update/${editProduct._id}`,
+                `https://product-warranty-db-backend.onrender.com/update/${editProduct._id}`,
                 editProduct
             );
 

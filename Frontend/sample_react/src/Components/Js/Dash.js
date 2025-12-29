@@ -28,7 +28,7 @@ function Dash() {
     const userId = localStorage.getItem("userId");
     const productList = async () => {
         try {
-            const result = await axios.get(`http://localhost:5022/product/${userId}`)
+            const result = await axios.get(`https://product-warranty-db-backend.onrender.com/product/${userId}`)
             setProduct(result.data.data)
         }
         catch (err) {

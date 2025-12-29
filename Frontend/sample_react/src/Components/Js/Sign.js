@@ -89,7 +89,7 @@ function Sign() {
             repeatPassword: repeatPass
         };
         try {
-            const response = await axios.post('http://localhost:5022/create', userDetails)
+            const response = await axios.post('https://product-warranty-db-backend.onrender.com/create', userDetails)
             console.log(response);
             
             if (response.data.success) {

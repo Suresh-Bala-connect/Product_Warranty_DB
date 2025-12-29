@@ -47,7 +47,7 @@ function Login() {
 
     const getAlluser = async () => {
         try {
-            const response = await axios.get("http://localhost:5022/users")
+            const response = await axios.get("https://product-warranty-db-backend.onrender.com/users")
             response.status === 200 && console.log("Users data:", response.data);
         }
         catch (error) {
@@ -63,7 +63,7 @@ function Login() {
             };
             console.log(userDetails);
 
-            const response = await axios.post("http://localhost:5022/api/login", userDetails);
+            const response = await axios.post("https://product-warranty-db-backend.onrender.com/api/login", userDetails);
             console.log("------", response);
 
             if (response.data.success) {
